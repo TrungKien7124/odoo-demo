@@ -2,6 +2,7 @@ import pandas as pd
 import io
 from odoo.http import Response
 from io import StringIO
+import numpy as np
 
 
 def export_file(data, file_name, file_type='csv'):
@@ -47,7 +48,8 @@ def import_file(file):
             raise ValueError("Chỉ hỗ trợ file .csv, .xls, .xlsx")
 
         df = df.where(pd.notnull(df), None)
-        print(df)
+
+        df = df.replace({np.nan: None})
 
         # Trả về dữ liệu dạng list[dict]
         return df.to_dict(orient='records')

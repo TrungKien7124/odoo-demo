@@ -1,5 +1,51 @@
 from odoo import models, fields
 from datetime import date, datetime
+from enum import Enum
+
+class SupplierAlias2Field(Enum):
+        id = 'id'
+        co = 'code'
+        al = 'alias'
+        na = 'name'
+        ci = 'country_id'
+        ad = 'address'
+        arc = 'area_code'
+        arn = 'area_name'
+        cc = 'city_code'
+        cn = 'city_name'
+        pn = 'phone_number'
+        em = 'email'
+        we = 'website'
+        tc = 'tax_code'
+        pc = 'post_code'
+        fn = 'fax_number'
+        cd = 'create_date'
+        wd = 'write_date'
+        cu = 'create_uid'
+        wu = 'write_uid'
+
+class SupplerFields2Labels(Enum):
+        id = 'ID'
+        code = 'Mã nhà cung cấp'
+        alias = 'Tên viết tắt'
+        name = 'Tên nhà cung cấp'
+        country_id = 'Mã Quốc gia'
+        address = 'Địa chỉ'
+        area_code = 'Mã vùng'
+        area_name = 'Tên vùng'
+        city_code = 'Mã thành phố'
+        city_name = 'Tên thành phố'
+        phone_number = 'Số điện thoại'
+        email = 'Email'
+        website = 'Website'
+        tax_code = 'Mã số thuế'
+        post_code = 'Mã bưu điện'
+        fax_number = 'Số fax'
+        create_date = 'Ngày tạo'
+        write_date = 'Ngày cập nhật'
+        create_uid = 'Mã Người tạo'
+        write_uid = 'Mã Người cập nhật'
+
 
 
 class SupplierModel(models.Model):

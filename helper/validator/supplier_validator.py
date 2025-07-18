@@ -76,6 +76,9 @@ class SupplierValidator(BaseValidator):
         self.data = data
         self.validate_data()
         return self.get_errors()
+    
+    def clear_errors(self):
+        self.errors = {}
 
     def get_errors(self):
         return self.errors

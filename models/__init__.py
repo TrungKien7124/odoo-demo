@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import supplier_model, country_model
+from . import supplier_model, country_model, user_model
